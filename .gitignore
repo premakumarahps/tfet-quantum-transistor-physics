@@ -1,0 +1,28 @@
+﻿# Dependencies & Build Outputs
+node_modules/
+web/node_modules/
+dist/
+web/dist/
+build/
+.next/
+web/.next/
+.vite/
+web/.vite/
+*.local
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.class
+venv/
+.venv/
+env/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json

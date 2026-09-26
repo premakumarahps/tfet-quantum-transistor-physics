@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ease-google: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-luxury: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-antigravity: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #070a12;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.15), transparent 70%),
+      radial-gradient(circle at 10% 40%, rgba(6, 182, 212, 0.08), transparent 45%),
+      radial-gradient(circle at 90% 70%, rgba(16, 185, 129, 0.06), transparent 45%);
+    background-attachment: fixed;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Portfolio-Matched Luxury Hover Lift */
+.hover-lift {
+  transition: transform 0.4s var(--ease-luxury),
+              box-shadow 0.4s var(--ease-luxury),
+              border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.3),
+              0 6px 16px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* Antigravity Quantum Spectrum Card Shimmer */
+.spectrum-card {
+  position: relative;
+  transition: transform 0.4s var(--ease-luxury),
+              box-shadow 0.4s var(--ease-luxury),
+              border-color 0.3s ease;
+}
+
+.spectrum-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.7), rgba(59, 130, 246, 0.7), rgba(6, 182, 212, 0.7), rgba(139, 92, 246, 0.7));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-luxury);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spectrum-card:hover::before {
+  opacity: 1;
+  animation: spectrumShift 6s linear infinite;
+}
+
+@keyframes spectrumShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Luxury Divider */
+.luxury-divider {
+  width: 5rem;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4);
+  transition: width 0.75s var(--ease-luxury);
+}
+
+.group:hover .luxury-divider {
+  width: 8rem;
+}
+
+/* Quantum Luminous Glow */
+.hover-glow {
+  transition: all 0.35s var(--ease-luxury);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.5), 0 0 50px rgba(6, 182, 212, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* KaTeX custom sizing in dark mode */
+.katex {
+  font-size: 1.05em;
+  color: #e2e8f0;
+}
+
+.katex-display {
+  margin: 0.75em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25em 0;
+}
