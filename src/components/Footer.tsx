@@ -7,8 +7,7 @@ import {
   Waves, 
   Activity, 
   BarChart3, 
-  BookOpen 
-} from 'lucide-react';
+  BookOpen, ExternalLink } from 'lucide-react';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -139,6 +138,26 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
             © Academic Engineering Project • Solid State Materials Curriculum
+          </div>
+          <div className="flex items-center gap-4 text-xs">
+            <a
+              href="https://github.com/premakumarahps/tfet-quantum-transistor-physics"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+            >
+              <span>GitHub Repository</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href="https://premakumarahps.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+            >
+              <span>Main Portfolio</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <span>Authored by</span>
